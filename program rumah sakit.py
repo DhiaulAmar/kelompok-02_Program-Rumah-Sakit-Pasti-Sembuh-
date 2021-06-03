@@ -69,3 +69,48 @@ while loop:
         print(" 2. Rawat Inap")
 
         jenis_rawat = str(input("Silahkan pilih jenis rawat yang di inginkan [1/2] : "))
+        if jenis_rawat == "1":
+            input("\nNama: ")
+            print("Pilihan Poli: ")
+            print(" 1. Poli Umum")
+            print(" 2. Poli Anak")
+            print(" 3. Poli Syaraf")
+            print(" 4. Poli Orthopedi")
+            menupoli = ["Poli Umum", "Poli Anak", "Poli Syaraf", "Poli Jantung"]
+
+            pilpoli = input("Masukkan Poli yang diinginkan (1/2/3/4): ")
+            if pilpoli == "1":
+                poli = menupoli[0]
+                print("\nDaftar Dokter Poli Umum")
+                print(" 1. dr. Surya")
+                print(" 2. dr. Hera")
+                print(" 3. dr. Dani")
+                dafdok = ["dr. Surya", "dr. Hera", "dr. Dani"]
+                pildok = input("Silahkan pilih dokter (1/2/3) : ")
+                jam = ["12:00", "14:00", "16:00"]
+                if pildok == "1":
+                    dokter = dafdok[0]
+                elif pildok == "2":
+                    dokter = dafdok[1]
+                elif pildok == "3":
+                    dokter = dafdok[2]
+                else:
+                    print("Pilihan dokter tidak tersedia")
+
+            elif pilpoli == "2":
+                poli = menupoli[1]
+                print("\nDaftar Dokter Poli Anak")
+                print(" 1. dr. Santi")
+                print(" 2. dr. Ara")
+                print(" 3. dr. Angel")
+                dafdok = ["dr. Santi", "dr. Ara", "dr. Angel"]
+                pildok = input("Silahkan pilih dokter (1/2/3) : ")
+                jam = ["13:00", "14:40", "17:00"]
+                if pildok == "1":
+                    dokter = dafdok[0]
+                elif pildok == "2":
+                    dokter = dafdok[1]
+                elif pildok == "3":
+                    dokter = dafdok[2]
+                else:
+                    print("Pilihan dokter tidak tersedia")
