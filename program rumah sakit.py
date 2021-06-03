@@ -1,5 +1,6 @@
 import sys
 import os
+import random
 
 loop = True
 
@@ -7,9 +8,36 @@ print()
 print("\t-------------------------------------------------------------------------------------------------------")
 print("\t------------------------------------SELAMAT DATANG DI PROGRAM------------------------------------------")
 print("\t-------------------------------------RUMAH SAKIT PASTI SEMBUH------------------------------------------")
+print("\t---------------------------------Jl.Bahagia No.76, Jakarta 12930---------------------------------------")
 print("\t-------------------------------------------------------------------------------------------------------")
 print()
 print()
+
+def kamar():
+    print("\nPilihan kelas kamar: ")
+    print("\t1. Kelas 3")
+    print("\t2. Kelas 2")
+    print("\t3. Kelas 1")
+    print("\t4. Kelas VIP")
+    pilihan_kamar = input("Silahkan pilih jenis kamar: ")
+    dafkam = ["Kelas 3", "Kelas 2", "Kelas 1", "Kelas VIP"]
+
+    harga3 = 200000
+    harga2 = 375000
+    harga1 = 550000
+    hargavip = 725000
+
+    if pilihan_kamar == "1":
+        print("Harga kamar kelas 3 : Rp", harga3)
+    elif pilihan_kamar == "2":
+        print("Harga kamar kelas 3 : Rp", harga2)
+    elif pilihan_kamar == "3":
+        print("Harga kamar kelas 3 : Rp", harga1)
+    elif pilihan_kamar == "4":
+        print("Harga kamar kelas 3 : Rp", hargavip)
+    else:
+        print("Pilihan kamar tidak tersedia")
+        sys.exit()
 
 print("Daftar menu:")
 print("\t1. Pendataan pasien dan berkas")
