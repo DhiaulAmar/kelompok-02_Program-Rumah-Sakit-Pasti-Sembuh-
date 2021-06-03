@@ -114,3 +114,65 @@ while loop:
                     dokter = dafdok[2]
                 else:
                     print("Pilihan dokter tidak tersedia")
+                    
+            elif pilpoli == "3":
+                poli = menupoli[2]
+                print("\nDaftar Dokter Poli Syaraf")
+                print(" 1. dr. Mutiara")
+                print(" 2. dr. Richard")
+                print(" 3. dr. Naufal")
+                dafdok = ["dr. Mutiara", "dr. Richard", "dr. Naufal"]
+                pildok = input("Silahkan pilih dokter (1/2/3) : ")
+                jam = ["14:10", "16:40", "19:00"]
+                if pildok == "1":
+                    dokter = dafdok[0]
+                elif pildok == "2":
+                    dokter = dafdok[1]
+                elif pildok == "3":
+                    dokter = dafdok[2]
+                else:
+                    print("Pilihan dokter tidak tersedia")
+
+            elif pilpoli == "4":
+                poli = menupoli[3]
+                print("\nDaftar Dokter Poli Orthopedi")
+                print(" 1. dr. Adib")
+                print(" 2. dr. Tejo")
+                print(" 3. dr. Alif")
+                dafdok = ["dr. Adib", "dr. Tejo", "dr. Alif"]
+                pildok = input("Silahkan pilih dokter (1/2/3) : ")
+                jam = ["12:30", "15:15", "17:50"]
+                if pildok == "1":
+                    dokter = dafdok[0]
+                elif pildok == "2":
+                    dokter = dafdok[1]
+                elif pildok == "3":
+                    dokter = dafdok[2]
+                else:
+                    print("Pilihan dokter tidak tersedia")
+
+            else:
+                print("Pilihan Poli Tidak Tersedia")
+                sys.exit()
+
+            def strukrawat():
+                print()
+                print("-----------------------------------")
+                print("     Rumah Sakit Pasti Sembuh")
+                print(" Jl.Bahagia No.76, Jakarta 12930")
+                print("-----------------------------------")
+                print()
+                print("           No Antrian")
+                print("              ", random.randint(1, 50))
+                print("          ", poli)
+                print("          ",  dokter)
+                print("          Pukul", random.choice(jam))
+                print("  Terima Kasih Atas Kunjungan Anda")
+                print("        Semoga Lekas Sembuh")
+                print()
+                sys.exit()
+            print(strukrawat())
+
+
+        elif jenis_rawat == "2":
+            kamar()
