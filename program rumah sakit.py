@@ -176,8 +176,8 @@ while loop:
 
         elif jenis_rawat == "2":
             kamar()
-            
-                elif pilihan_fitur == "3":
+           
+    elif pilihan_fitur == "3":
         print("\nFitur Ambil Antar Obat")
         print("Silahkan isi data berikut")
         nama = input("Nama: ")
@@ -235,3 +235,27 @@ while loop:
             else:
                 print("Daerah Tidak Tersedia ")
                 sys.exit()
+
+            def strukobat():
+                print()
+                print("----------------------------------------------")
+                print("           Rumah Sakit Pasti Sembuh")
+                print("        Jl.Bahagia No.76, Jakarta 12930")
+                print("----------------------------------------------")
+                print()
+                print("              Tujuan Pengantaran")
+                print("                Nama:", nama)
+                print("               Nama obat:", namobat)
+                print("    Alamat:", alamat)
+                print("Estimasi pengiriman ± 2 hari setelah pemesanan")
+                print("       Terima Kasih Atas Kunjungan Anda")
+                print("            Semoga Lekas Sembuh")
+                print()
+                sys.exit()
+            print(strukobat())
+        else:
+            print("Pilihan tidak tersedia")
+            sys.exit()
+
+    elif pilihan_fitur == "4":
+        kamar()    
