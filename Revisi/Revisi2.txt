@@ -1,0 +1,6 @@
+1. Untuk menu 1 masih belum selesai ya?? jangan lupa hasil input data pasiennya disimpan 
+2. menu 2 bagian rawat jalan sudah selesai dan sudah baik, tapi untuk bagian rawat inap pada bagian fungsi print masih kamar kelas 3 semua, jangan lupa disesuaikan agar user tidak bingung. setelah selesai dari menu rawat inap sepertinya program masih looping di menu 2.. silakan dilanjutkan ke menu selanjutnya jika memang ada atau keluarkan dari loop bila memang sudah sesuai
+3. menu 3 sudah selesai semua ya? sudah bagus kok tapi lebih baik kalau ada daftar obat apa yang dijual beserta harganya dan total yang harus dibayar user tolong masukkan ke dalam struk yaa
+4. menu 4 juga belum selesai ya?? silakan dilanjut yaa
+5. sepertinya ada list dafkam tapi tidak terpakai.. mungkin bisa dipakai yaa
+Silakan dilanjut ya pembuatan kode programnya! Semangat!
