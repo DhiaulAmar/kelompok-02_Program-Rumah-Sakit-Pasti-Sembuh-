@@ -70,6 +70,26 @@ def pembayaran():
             kembalian = "-"
     return bayarnya, byr, jumlah_bayar, kembalian
 
+def strukbyr(bayarnya, byr, jumlah_bayar, kembalian):
+    print()
+    print("-----------------------------------")
+    print("     Rumah Sakit Pasti Sembuh")
+    print(" Jl.Bahagia No.76, Jakarta 12930")
+    print("-----------------------------------")
+    print()
+    print("            Struk Pembayaran")
+    print()
+    print(" Jenis Bayar     : ", byr)
+    print(" Total Tagihan   : ", jumlah_bayar)
+    print()
+    print(" Pembayaran      : ", bayarnya)
+    print(" Kembali         : ", kembalian)
+    print()
+    print("  Terima Kasih Atas Kunjungan Anda")
+    print("        Semoga Lekas Sembuh")
+    print()
+    sys.exit()
+
 print("Daftar menu:")
 print("\t1. Pendataan pasien dan berkas")
 print("\t2. Pendaftaran antrian")
