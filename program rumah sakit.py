@@ -31,11 +31,11 @@ def kamar():
     if pilihan_kamar == "1":
         print("Harga kamar kelas 3 : Rp", harga3)
     elif pilihan_kamar == "2":
-        print("Harga kamar kelas 3 : Rp", harga2)
+        print("Harga kamar kelas 2 : Rp", harga2)
     elif pilihan_kamar == "3":
-        print("Harga kamar kelas 3 : Rp", harga1)
+        print("Harga kamar kelas 1 : Rp", harga1)
     elif pilihan_kamar == "4":
-        print("Harga kamar kelas 3 : Rp", hargavip)
+        print("Harga kamar kelas VIP : Rp", hargavip)
     else:
         print("Pilihan kamar tidak tersedia")
         sys.exit()
@@ -217,6 +217,8 @@ while loop:
                 print("Pilihan Poli Tidak Tersedia")
                 sys.exit()
 
+            tagihan = 150000    
+                
             def strukrawat():
                 print()
                 print("-----------------------------------")
@@ -232,9 +234,11 @@ while loop:
                 print("  Terima Kasih Atas Kunjungan Anda")
                 print("        Semoga Lekas Sembuh")
                 print()
-                sys.exit()
-            print(strukrawat())
 
+            strukrawat()
+
+            bayarnya, byr, jumlah_bayar, kembalian = pembayaran()
+            strukbyr(bayarnya, byr, jumlah_bayar, kembalian)
 
         elif jenis_rawat == "2":
             kamar()
@@ -391,7 +395,8 @@ while loop:
                 print("            Semoga Lekas Sembuh")
                 print()
 
-            print(strukobat())
+            strukobat()
+            
         else:
             print("Pilihan tidak tersedia")
 
