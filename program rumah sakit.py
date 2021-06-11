@@ -1,6 +1,7 @@
 import sys
 import os
 import random
+import pandas as pd
 
 loop = True
 
@@ -305,6 +306,74 @@ while loop:
         else:
             print("Obat Tidak Tersedia")
             sys.exit()
+            
+        kuantitas = int(input("Masukkan jumlah obat yang diinginkan: "))
+        totalobat = harga_obat * kuantitas
+
+        print("Pilihan ")
+        print(" 1. Diambil")
+        print(" 2. Diantar (Jabodetabek)")
+        amantar = input("Apakah obat ingin diambil atau diantar (1/2): ")
+        if amantar == "1":
+            print("\nFitur Pengambilan Obat")
+            tglobat = input("Masukkan tanggal pengambilan obat (dd-mm-yy): ")
+            jamobat = input("Masukkan waktu pemgambilan obat (contoh = 13:00): ")
+            print()
+            print()
+            print("-----------------------------------")
+            print("     Rumah Sakit Pasti Sembuh")
+            print(" Jl.Bahagia No.76, Jakarta 12930")
+            print("-----------------------------------")
+            print("      Struk Pengambilan Obat")
+            print()
+            print("       Nama Pemesan: ",nama)
+            print("       Nama Obat: ", obat)
+            print("       Harga: ", totalobat)
+            print(" Tanggal Pengambilan: ", tglobat)
+            print("          Pukul ", jamobat)
+            print("             Loket", random.randint(1, 5))
+            print(" Terima Kasih Atas Kunjungan Anda")
+            print("        Semoga Lekas Sembuh")
+            print()
+
+            tagihan = totalobat
+
+        elif amantar == "2":
+            print("\nFitur Pengantaran Obat")
+            print("Pilih daerah pengantaran: ")
+            print(" 1. Jakarta")
+            print(" 2. Bogor")
+            print(" 3. Depok")
+            print(" 4. Tangerang")
+            print(" 5. Bekasi")
+            bantar = [10000, 35000, 20000, 250000, 22000]
+            daerah = input("Masukkan daerah tempat tinggal Anda (1/2/3/4): ")
+            if daerah == "1":
+                biaya_antar = bantar[0]
+                print("Biaya antar: Rp10.000")
+                alamat = input("Masukkan alamat lengkap: ")
+            elif daerah == "2":
+                biaya_antar = bantar[1]
+                print("Biaya antar: Rp35.000")
+                alamat = input("Masukkan alamat lengkap: ")
+            elif daerah == "3":
+                biaya_antar = bantar[2]
+                print("Biaya antar: Rp20.000")
+                alamat = input("Masukkan alamat lengkap: ")
+            elif daerah == "4":
+                biaya_antar = bantar[3]
+                print("Biaya antar: Rp25.000")
+                alamat = input("Masukkan alamat lengkap: ")
+            elif daerah == "5":
+                biaya_antar = bantar[4]
+                print("Biaya antar: Rp22.000")
+                alamat = input("Masukkan alamat lengkap: ")
+            else:
+                print("Daerah Tidak Tersedia ")
+                biaya_antar = 0
+                sys.exit()
+
+            tagihan = totalobat + biaya_antar
 
             def strukobat():
                 print()
@@ -315,17 +384,20 @@ while loop:
                 print()
                 print("              Tujuan Pengantaran")
                 print("                Nama:", nama)
-                print("               Nama obat:", namobat)
+                print("               Nama obat:", obat)
                 print("    Alamat:", alamat)
                 print("Estimasi pengiriman ± 2 hari setelah pemesanan")
                 print("       Terima Kasih Atas Kunjungan Anda")
                 print("            Semoga Lekas Sembuh")
                 print()
-                sys.exit()
+
             print(strukobat())
         else:
             print("Pilihan tidak tersedia")
-            sys.exit()
+
+        bayarnya, byr, jumlah_bayar, kembalian = pembayaran()
+        strukbyr(bayarnya, byr, jumlah_bayar, kembalian)
 
     elif pilihan_fitur == "4":
-        kamar()    
+        kamar()
+        
