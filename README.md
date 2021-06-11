@@ -17,6 +17,11 @@ Berkas ACC_2_ABYAN_TUBES TAHAP 1
    
     Merupakan proposal awal yang menjelaskan secara garis besar
     isi program 
+   
+Berkas Data_Pasien
+
+   Merupakan berkas database untuk menyimpan data pasien pada fitur 
+   Pendataan Pasien
 
 Berkas "README.md"
     
