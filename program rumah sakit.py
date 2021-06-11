@@ -238,64 +238,73 @@ while loop:
         elif jenis_rawat == "2":
             kamar()
            
+    
     elif pilihan_fitur == "3":
         print("\nFitur Ambil Antar Obat")
         print("Silahkan isi data berikut")
         nama = input("Nama: ")
-        namobat = input("Nama Obat: ")
-        print("Pilihan ")
-        print(" 1. Diambil")
-        print(" 2. Diantar (Jabodetabek)")
-        obat = input("Apakah obat ingin diambil atau diantar (1/2): ")
-        if obat == "1":
-            print("\nFitur Pengambilan Obat")
-            tglobat = input("Masukkan tanggal pengambilan obat (dd-mm-yy): ")
-            jamobat = input("Masukkan waktu pemgambilan obat (contoh = 13:00): ")
-            print()
-            print()
-            print("-----------------------------------")
-            print("     Rumah Sakit Pasti Sembuh")
-            print(" Jl.Bahagia No.76, Jakarta 12930")
-            print("-----------------------------------")
-            print("      Struk Pengambilan Obat")
-            print()
-            print("       Nama Pemesan: ",nama)
-            print("       Nama Obat: ", namobat)
-            print(" Tanggal Pengambilan: ", tglobat)
-            print("          Pukul ", jamobat)
-            print("             Loket", random.randint(1, 5))
-            print(" Terima Kasih Atas Kunjungan Anda")
-            print("        Semoga Lekas Sembuh")
-            print()
-            sys.exit()
+        print("Daftar Obat: ")
+        print(" 1. Amoxilin             6. Dexanta              11. Panadol")
+        print(" 2. Alergine             7. Dulcolax             12. Paratusin")
+        print(" 3. Asam Mefenamat       8. Histapan             13. Ranitidine Hexpharm")
+        print(" 4. Cetrizine            9. Imbost force         14. Salbutamol")
+        print(" 5. Combantrin          10. Nalgestan            15. Voltadex")
+        pilobat = input("Pilih obat yang diinginkan (1/2/3...): ")
+        dafobat = ["Amoxilin", "Alergine", "Asam Mefenamat", "Cetrizine ", "Combantrin",
+                   "Dexanta", "Dulcolax", "Histapan", "Imbost force", "Nalgestan",
+                   "Panadol", "Paratusin", "Ranitidine Hexpharm", "Salbutamol", "Voltadex"]
+        harobat = [3700, 44500, 2800, 6000, 14500,
+                   5000, 8500, 8100, 70000, 9000,
+                   10000, 10000, 1600, 1600, 15000]
 
-        elif obat == "2":
-            print("\nFitur Pengantaran Obat")
-            print("Pilih daerah pengantaran: ")
-            print(" 1. Jakarta")
-            print(" 2. Bogor")
-            print(" 3. Depok")
-            print(" 4. Tangerang")
-            print(" 5. Bekasi")
-            daerah = input("Masukkan daerah tempat tinggal Anda (1/2/3/4): ")
-            if daerah == "1":
-                print("Biaya antar: Rp10.000")
-                alamat = input("Masukkan alamat lengkap: ")
-            elif daerah == "2":
-                print("Biaya antar: Rp35.000")
-                alamat = input("Masukkan alamat lengkap: ")
-            elif daerah == "3":
-                print("Biaya antar: Rp20.000")
-                alamat = input("Masukkan alamat lengkap: ")
-            elif daerah == "4":
-                print("Biaya antar: Rp25.000")
-                alamat = input("Masukkan alamat lengkap: ")
-            elif daerah == "5":
-                print("Biaya antar: Rp22.000")
-                alamat = input("Masukkan alamat lengkap: ")
-            else:
-                print("Daerah Tidak Tersedia ")
-                sys.exit()
+        if pilobat == "1":
+            obat = dafobat[0]
+            harga_obat = harobat[0]
+        elif pilobat == "2":
+            obat = dafobat[1]
+            harga_obat = harobat[1]
+        elif pilobat == "3":
+            obat = dafobat[2]
+            harga_obat = harobat[2]
+        elif pilobat == "4":
+            obat = dafobat[3]
+            harga_obat = harobat[3]
+        elif pilobat == "5":
+            obat = dafobat[4]
+            harga_obat = harobat[4]
+        elif pilobat == "6":
+            obat = dafobat[5]
+            harga_obat = harobat[5]
+        elif pilobat == "7":
+            obat = dafobat[6]
+            harga_obat = harobat[6]
+        elif pilobat == "8":
+            obat = dafobat[7]
+            harga_obat = harobat[7]
+        elif pilobat == "9":
+            obat = dafobat[8]
+            harga_obat = harobat[8]
+        elif pilobat == "10":
+            obat = dafobat[9]
+            harga_obat = harobat[9]
+        elif pilobat == "11":
+            obat = dafobat[10]
+            harga_obat = harobat[10]
+        elif pilobat == "12":
+            obat = dafobat[11]
+            harga_obat = harobat[11]
+        elif pilobat == "13":
+            obat = dafobat[12]
+            harga_obat = harobat[12]
+        elif pilobat == "14":
+            obat = dafobat[13]
+            harga_obat = harobat[13]
+        elif pilobat == "15":
+            obat = dafobat[14]
+            harga_obat = harobat[14]
+        else:
+            print("Obat Tidak Tersedia")
+            sys.exit()
 
             def strukobat():
                 print()
