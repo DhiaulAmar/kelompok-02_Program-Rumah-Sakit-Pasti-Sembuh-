@@ -59,8 +59,6 @@ def pembayaran():
         jumlah_bayar = tagihan
         fee = print("Total Tagihan Anda adalah Rp", jumlah_bayar)
         bayarnya = int(input("Masukkan jumlah uang anda: "))
-        # kurang = str(jumlah_bayar - dibayar)
-        # kembali = str(dibayar - jumlah_bayar)
 
         if bayarnya > jumlah_bayar:
             kembalian = bayarnya - jumlah_bayar
