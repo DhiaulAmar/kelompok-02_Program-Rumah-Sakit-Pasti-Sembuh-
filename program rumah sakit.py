@@ -38,6 +38,37 @@ def kamar():
     else:
         print("Pilihan kamar tidak tersedia")
         sys.exit()
+ 
+def pembayaran():
+    print("\nForm Pembayaran")
+    print("jenis Pembayaran")
+    print(" 1. BPJS")
+    print(" 2. Mandiri")
+    pilbayar = ["BPJS", "Mandiri"]
+    jbayar = input("Pilih jenis pembayaran (1/2): ")
+
+
+    if jbayar == "1":
+        byr = pilbayar[0]
+        jumlah_bayar = tagihan
+        bayarnya = tagihan
+        kembalian = 0
+    elif jbayar == "2":
+        byr = pilbayar[1]
+        jumlah_bayar = tagihan
+        fee = print("Total Tagihan Anda adalah Rp", jumlah_bayar)
+        bayarnya = int(input("Masukkan jumlah uang anda: "))
+        # kurang = str(jumlah_bayar - dibayar)
+        # kembali = str(dibayar - jumlah_bayar)
+
+        if bayarnya > jumlah_bayar:
+            kembalian = bayarnya - jumlah_bayar
+        elif bayarnya < jumlah_bayar:
+            kembali = jumlah_bayar - tagihan
+            kembalian = print("Maaf, Uang anda kurang sebesar Rp ", kembali)
+        elif bayarnya == jumlah_bayar:
+            kembalian = "-"
+    return bayarnya, byr, jumlah_bayar, kembalian
 
 print("Daftar menu:")
 print("\t1. Pendataan pasien dan berkas")
