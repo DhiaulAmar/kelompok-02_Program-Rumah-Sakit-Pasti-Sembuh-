@@ -99,6 +99,11 @@ print("\t4. Ketersediaan kamar pasien")
 pilihan_fitur = str(input("Silahkan pilih fitur yang diinginkan [1/2/3/4] : "))
 while loop:
     if pilihan_fitur == "1":
+        print("Fitur Pendataan Pasien")
+        file = "Data_Pasien.xlsx"
+        Data_Pasien = pd.read_excel(file)
+        df = pd.DataFrame(Data_Pasien)
+
         print("\nSilahkan Masukkan data pasien")
         nama = input("Nama Pasien: ")
         jkelamin = input("Jenis Kelamin (l/p): ")
@@ -111,6 +116,11 @@ while loop:
             os.system('cls')
             print('No Hp Anda tidak terdaftar')
             continue
+
+        df.loc[len(df.index)] = [len(df) + 1, nama, jkelamin, usia, alamat, ktp, ttl, konkerabat]
+        export = pd.ExcelWriter(file)
+        df.to_excel(export, index=False)
+        export.save()
         print("Data pasien telah tersimpan")
         sys.exit()
 
