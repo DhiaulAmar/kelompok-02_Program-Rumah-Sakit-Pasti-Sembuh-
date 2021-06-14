@@ -1,0 +1,6 @@
+1. setelah pemilihan jenis kamar masih terjadi looping, tolong program dicek kembali
+2. saat pembayaran kurang jumlah kekurangannya masih 0, belum menampilkan yang sebenarnya
+3. fitur menu ketersediaan masih perlu diselesaikan
+
+selesaikan programnya yaa.. kalian pasti bisa
+keep up the goodwork!!
