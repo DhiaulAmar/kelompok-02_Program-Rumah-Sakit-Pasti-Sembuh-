@@ -474,5 +474,109 @@ while loop:
 
                 tagihan = totalobat + biaya_antar
                 pay = "Pengantaran Obat"
+                
+              
+                def strukobat():
+                    print()
+                    print("----------------------------------------------")
+                    print("           Rumah Sakit Pasti Sembuh")
+                    print("        Jl.Bahagia No.76, Jakarta 12930")
+                    print("----------------------------------------------")
+                    print()
+                    print("              Tujuan Pengantaran")
+                    print("                Nama:", nama)
+                    print("               Nama obat:", obat)
+                    print("    Alamat:", alamat)
+                    print("Estimasi pengiriman ± 2 hari setelah pemesanan")
+                    print("       Terima Kasih Atas Kunjungan Anda")
+                    print("            Semoga Lekas Sembuh")
+                    print()
+
+
+                strukobat()
+
+            else:
+                print("Pilihan tidak tersedia")
+                sys.exit()
+
+            bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar, Loop = pembayaran()
+            strukbyr(bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar)
+
+            ulang = str(input("Apakah anda ingin keluar dari program (Y/T)"))
+            if ulang.upper() == "Y":
+                print("\nTerima Kasih sudah menggunakan jasa rumah sakit kami")
+                print("Semoga Lekas Sembuh")
+                sys.exit()
+            else:
+                continue
+
+
+
+        elif pilihan_fitur == "4":
+            os.system('cls')
+            print("\nPilihan kelas kamar: ")
+            print("\t1. Kelas 3")
+            print("\t2. Kelas 2")
+            print("\t3. Kelas 1")
+            print("\t4. Kelas VIP")
+            pilihan_kamar = input("Silahkan pilih jenis kamar (1/2/3/4): ")
+            dafkam = ["Kelas 3", "Kelas 2", "Kelas 1", "Kelas VIP"]
+            harkam = [200000, 375000, 550000, 725000]
+
+
+            if pilihan_kamar == "1":
+                harga_kamar = harkam[0]
+                print("\nKamar Tersedia")
+                print("Harga kamar kelas 3 : Rp", harkam[0])
+                print("Pembayaran hanya untuk DP awal")
+                print("Silahkan menuju loket untuk melakukan pembayaran awal")
+
+            elif pilihan_kamar == "2":
+                harga_kamar = harkam[1]
+                print("\nKamar Tersedia")
+                print("Harga kamar kelas 2 : Rp", harkam[1])
+                print("Pembayaran hanya untuk DP awal")
+                print("Silahkan menuju loket untuk melakukan pembayaran awal")
+
+            elif pilihan_kamar == "3":
+                harga_kamar = harkam[2]
+                print("\nKamar Tersedia")
+                print("Harga kamar kelas 1 : Rp", harkam[2])
+                print("Pembayaran hanya untuk DP awal")
+                print("Silahkan menuju loket untuk melakukan pembayaran awal")
+
+            elif pilihan_kamar == "4":
+                harga_kamar = harkam[3]
+                print("\nKamar Tersedia")
+                print("Harga kamar kelas VIP : Rp", harkam[3])
+                print("Pembayaran hanya untuk DP awal")
+                print("Silahkan menuju loket untuk melakukan pembayaran awal")
+
+            else:
+                print("Pilihan kamar tidak tersedia")
+                sys.exit()
+
+
+            tagihan = harga_kamar
+            pay = "Rawat Inap"
+
+
+            bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar, Loop = pembayaran()
+            strukbyr(bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar)
+
+            ulang = str(input("Apakah anda ingin keluar dari program (Y/T)"))
+            if ulang.upper() == "Y":
+                print("\nTerima Kasih sudah menggunakan jasa rumah sakit kami")
+                print("Semoga Lekas Sembuh")
+                sys.exit()
+            else:
+                continue
+
+
+        else:
+            print("\nPilihan Menu Tidak Tersedia")
+
+
+exit()
 
             
