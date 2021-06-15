@@ -403,9 +403,11 @@ while loop:
             else:
                 print("Obat Tidak Tersedia")
                 sys.exit()
+                
 
                 kuantitas = int(input("Masukkan jumlah obat yang diinginkan: "))
             totalobat = harga_obat * kuantitas
+            
 
             print("Pilihan ")
             print(" 1. Diambil")
@@ -436,6 +438,7 @@ while loop:
                 tagihan = totalobat
                 pay = "Pengambilan Obat"
 
+                
             elif amantar == "2":
                 print("\nFitur Pengantaran Obat")
                 print("Pilih daerah pengantaran: ")
@@ -502,6 +505,7 @@ while loop:
             bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar, Loop = pembayaran()
             strukbyr(bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar)
 
+            
             ulang = str(input("Apakah anda ingin keluar dari program (Y/T)"))
             if ulang.upper() == "Y":
                 print("\nTerima Kasih sudah menggunakan jasa rumah sakit kami")
