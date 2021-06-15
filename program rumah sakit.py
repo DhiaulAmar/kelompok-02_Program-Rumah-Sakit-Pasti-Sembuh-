@@ -409,7 +409,7 @@ while loop:
                 sys.exit()
                 
 
-                kuantitas = int(input("Masukkan jumlah obat yang diinginkan: "))
+            kuantitas = int(input("Masukkan jumlah obat yang diinginkan: "))
             totalobat = harga_obat * kuantitas
             
 
