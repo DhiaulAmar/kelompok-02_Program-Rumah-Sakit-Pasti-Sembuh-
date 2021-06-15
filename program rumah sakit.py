@@ -56,6 +56,10 @@ def pembayaran():
                     break
                 elif kembalian < 0:
                     print("Maaf, Uang anda kurang sebesar Rp ", kembali)
+                   
+    else:
+        print("Pilihan tidak tersedia")
+        sys.exit()
 
 
     return bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar, Loop
