@@ -331,6 +331,10 @@ while loop:
                 strukbyr(bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik,
                          jbayar)
 
+            else:
+                print("Pilihan Menu Tidak Tersedia")
+                sys.exit()
+
             ulang = str(input("Apakah anda ingin keluar dari program (Y/T)"))
             if ulang.upper() == "Y":
                 print("\nTerima Kasih sudah menggunakan jasa rumah sakit kami")
@@ -474,7 +478,7 @@ while loop:
                     print("Biaya antar: Rp22.000")
                     alamat = input("Masukkan alamat lengkap: ")
                 else:
-                    print("Daerah Tidak Tersedia ")
+                    print("Pilihan daerah Tidak Tersedia ")
                     biaya_antar = 0
                     sys.exit()
 
@@ -572,7 +576,7 @@ while loop:
             bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar, Loop = pembayaran()
             strukbyr(bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar)
 
-            ulang = str(input("Apakah anda ingin keluar dari program (Y/T)"))
+            ulang = str(input("\nApakah anda ingin keluar dari program (Y/T)"))
             if ulang.upper() == "Y":
                 print("\nTerima Kasih sudah menggunakan jasa rumah sakit kami")
                 print("Semoga Lekas Sembuh")
