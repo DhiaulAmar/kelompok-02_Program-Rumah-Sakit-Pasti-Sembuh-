@@ -1,3 +1,9 @@
+# TUBES PRAKTIKUM PROGRAMA KOMPUTER 2021
+# PROGRAM RUMAH "SAKIT PASTI SEMBUH"
+# Dibuat oleh Kel 2 Kelas A
+
+
+
 import sys
 import os
 import random
@@ -6,15 +12,15 @@ import pandas as pd
 loop = True
 
 
-def pembayaran():
-    print("\nForm Pembayaran")
+def pembayaran():   # Tampilan pada menu pembayaran
+    print("\nForm Pembayaran")  # Terdapat 2 pilihan pembayaran
     print("jenis Pembayaran")
     print(" 1. BPJS")
     print(" 2. Tunai")
     pilbayar = ["BPJS", "Tunai"]
-    jbayar = input("Pilih jenis pembayaran (1/2): ")
+    jbayar = input("Pilih jenis pembayaran (1/2): ")    # memilih jenis pembayaran
 
-    if jbayar == "1":
+    if jbayar == "1": # Jika memilih pembayaran BPJS, user akan diminta memasukkan beberapa data
         print("\nIsikan data berikut")
         nama_pasien = input("Nama: ")
         no_bpjs = int(input("No BPJS: "))
@@ -41,8 +47,8 @@ def pembayaran():
 
         while Loop == True:
             try:
-                fee = print("Total Tagihan Anda adalah Rp", jumlah_bayar)
-                bayarnya = int(input("Masukkan jumlah uang anda: "))
+                fee = print("Total Tagihan Anda adalah Rp", jumlah_bayar)   # program akan menampilkan nominal yang harus dibayarkan
+                bayarnya = int(input("Masukkan jumlah uang anda: "))    # user akan diminta memsukkan nominal uang yang dibayarkan
                 kembalian = bayarnya - jumlah_bayar
                 kembali = abs(kembalian)
 
@@ -55,8 +61,8 @@ def pembayaran():
                 elif kembalian == 0:
                     break
                 elif kembalian < 0:
-                    print("Maaf, Uang anda kurang sebesar Rp ", kembali)
-                   
+                    print("Maaf, Uang anda kurang sebesar Rp ", kembali) # apabila nominal yang dimasukkan kurang, maka progaram
+                                                                         # akan menampilkan bahwa uang anda kurang sebesar x
     else:
         print("Pilihan tidak tersedia")
         sys.exit()
@@ -67,7 +73,7 @@ def pembayaran():
 
 def strukbyr(bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar):
     print()
-    print("-----------------------------------")
+    print("-----------------------------------")            # Struk yang akan diterima setelah melakukan pembayaran
     print("     Rumah Sakit Pasti Sembuh")
     print(" Jl.Bahagia No.76, Jakarta 12930")
     print("-----------------------------------")
@@ -76,7 +82,7 @@ def strukbyr(bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_
     print()
     print(" Pembayaran      : ", bayar_apa)
     print(" Jenis Bayar     : ", byr)
-    if jbayar == "1":
+    if jbayar == "1":   # apabila memilih menu pembayaran BPJS, maka akan ada tambahan keterangan pada struk
         print(" Nama Pasien     : ", nama_pasien)
         print(" No BPJS         : ", no_bpjs)
         print(" TTL             : ", ttl_pasien)
@@ -92,7 +98,7 @@ def strukbyr(bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_
     
   
 
-while loop:
+while loop:         # Tempilan menu awal
 
     try:
         print()
@@ -120,8 +126,8 @@ while loop:
         print("Pilihan Menu Tidak Tersedia")
 
     else:
-        if pilihan_fitur == "1":
-            os.system('cls')
+        if pilihan_fitur == "1":    # ketika memilih "Pendataan pasien dan berkas"
+            os.system('cls')    # membersihkan layar dalam shell
             print("\nFitur Pendataan Pasien")
             file = "Data_Pasien.xlsx"
             Data_Pasien = pd.read_excel(file)
@@ -136,6 +142,7 @@ while loop:
             ttl = input("Tempat, Tanggal Lahir: ")
             konkerabat = input("Kontak kerabat: +62 ")
             if len(konkerabat) != 10 and len(konkerabat) != 11:
+                # ketika no hp tidak sama dengan 10/11 digit, program akan menolak
                 os.system('cls')
                 print('No Hp Anda tidak terdaftar')
                 continue
@@ -146,18 +153,18 @@ while loop:
             export.save()
             print("Data pasien telah tersimpan")
 
-            ulang = str(input("Apakah anda ingin keluar dari program (Y/T)"))
-            if ulang.upper() == "Y":
-                print("\nTerima Kasih sudah menggunakan jasa rumah sakit kami")
+            ulang = str(input("Apakah anda ingin keluar dari program (Y/T)")) # Setelah selesai, program akan menanyakan apakah user
+            if ulang.upper() == "Y":                                          # ingin keluar dari program
+                print("\nTerima Kasih sudah menggunakan jasa rumah sakit kami") # jika user memilih "Y", maka program akan selesai
                 print("Semoga Lekas Sembuh")
                 sys.exit()
             else:
-                continue
+                continue    # jika memilih "T", maka program akan kembali ke menu awal
 
 
-        elif pilihan_fitur == "2":
+        elif pilihan_fitur == "2":      # ketika memilih "pendaftaran antrian"
             os.system('cls')
-            print("\nJenis Rawat")
+            print("\nJenis Rawat")      # user memilih jenis rawat
             print(" 1. Rawat Jalan")
             print(" 2. Rawat Inap")
             jenis_rawat = str(input("Silahkan pilih jenis rawat yang di inginkan [1/2] : "))
@@ -169,6 +176,7 @@ while loop:
                 print(" 3. Poli Syaraf")
                 print(" 4. Poli Orthopedi")
                 menupoli = ["Poli Umum", "Poli Anak", "Poli Syaraf", "Poli Jantung"]
+                # pilihan poli dalam bentuk list akan dipanggil sesuai jenis poli yang dipilih
 
                 pilpoli = input("Masukkan Poli yang diinginkan (1/2/3/4): ")
                 if pilpoli == "1":
@@ -178,8 +186,10 @@ while loop:
                     print(" 2. dr. Hera")
                     print(" 3. dr. Dani")
                     dafdok = ["dr. Surya", "dr. Hera", "dr. Dani"]
+                    # pilihan dokter dalam bentuk list akan dipanggil sesuai dokter yang dipilih pada struk
                     pildok = input("Silahkan pilih dokter (1/2/3) : ")
                     jam = ["12:00", "14:00", "16:00"]
+                    # jam dokter akan di random pada struk
                     if pildok == "1":
                         dokter = dafdok[0]
                     elif pildok == "2":
@@ -252,11 +262,11 @@ while loop:
                     sys.exit()
 
 
-                tagihan = 150000
+                tagihan = 150000    # biaya untuk pilihan rawat jalan
                 pay = "Rawat Jalan"
 
                 
-                def strukrawat():
+                def strukrawat():   # struk yang akan ditampilkan setelah memilih dokter
                     print()
                     print("-----------------------------------")
                     print("     Rumah Sakit Pasti Sembuh")
@@ -278,18 +288,20 @@ while loop:
                 bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar, Loop = pembayaran()
                 strukbyr(bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik,
                          jbayar)
-
+                # memanggil menu pembayaran
 
             elif jenis_rawat == "2":
                 os.system('cls')
-                print("\nPilihan kelas kamar: ")
+                print("\nPilihan kelas kamar: ")    # user memilih jenis kamar
                 print("\t1. Kelas 3")
                 print("\t2. Kelas 2")
                 print("\t3. Kelas 1")
                 print("\t4. Kelas VIP")
                 pilihan_kamar = input("Silahkan pilih jenis kamar (1/2/3/4): ")
                 dafkam = ["Kelas 3", "Kelas 2", "Kelas 1", "Kelas VIP"]
+                # pilihan jenis kamar dalam bentuk list akan dipanggil sesuai jenis kamar yang dipilih
                 harkam = [200000, 375000, 550000, 725000]
+                # harga tarif awal untuk setiap jenis kamar
 
                 if pilihan_kamar == "1":
                     harga_kamar = harkam[0]
@@ -330,9 +342,10 @@ while loop:
                 bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar, Loop = pembayaran()
                 strukbyr(bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik,
                          jbayar)
+                # memanggil menu pembayaran
 
             else:
-                print("Pilihan Menu Tidak Tersedia")
+                print("Pilihan Menu Tidak Tersedia") # apabila user memilih selain pilihan 1 atau 2
                 sys.exit()
 
             ulang = str(input("Apakah anda ingin keluar dari program (Y/T)"))
@@ -344,12 +357,12 @@ while loop:
                 continue
 
 
-        elif pilihan_fitur == "3":
+        elif pilihan_fitur == "3":      # ketika memilih "pilihan ambil dan antar obat"
             os.system('cls')
             print("\nFitur Ambil Antar Obat")
             print("Silahkan isi data berikut")
             nama = input("Nama: ")
-            print("Daftar Obat: ")
+            print("Daftar Obat: ")      # datar obat yang bisa dipilih oleh user
             print(" 1. Amoxilin             6. Dexanta              11. Panadol")
             print(" 2. Alergine             7. Dulcolax             12. Paratusin")
             print(" 3. Asam Mefenamat       8. Histapan             13. Ranitidine Hexpharm")
@@ -359,9 +372,11 @@ while loop:
             dafobat = ["Amoxilin", "Alergine", "Asam Mefenamat", "Cetrizine ", "Combantrin",
                        "Dexanta", "Dulcolax", "Histapan", "Imbost force", "Nalgestan",
                        "Panadol", "Paratusin", "Ranitidine Hexpharm", "Salbutamol", "Voltadex"]
+            # jenis obat dalam bentuk list akan dipanggil sesuai dengan jenis obat yang dipilih
             harobat = [3700, 44500, 2800, 6000, 14500,
                        5000, 8500, 8100, 70000, 9000,
                        10000, 10000, 1600, 1600, 15000]
+            # harga obat per strip tiap jenisnya
 
             if pilobat == "1":
                 obat = dafobat[0]
@@ -414,18 +429,18 @@ while loop:
                 
 
             kuantitas = int(input("Masukkan jumlah obat yang diinginkan: "))
-            totalobat = harga_obat * kuantitas
+            totalobat = harga_obat * kuantitas # perhitungan tagihan obat
             
 
-            print("Pilihan ")
+            print("Pilihan ")       # pilihan apakah obat ingin diambil atau diantar
             print(" 1. Diambil")
             print(" 2. Diantar (Jabodetabek)")
             amantar = input("Apakah obat ingin diambil atau diantar (1/2): ")
-            if amantar == "1":
+            if amantar == "1":  # jika memilih diambil
                 print("\nFitur Pengambilan Obat")
                 tglobat = input("Masukkan tanggal pengambilan obat (dd-mm-yy): ")
                 jamobat = input("Masukkan waktu pemgambilan obat (contoh = 13:00): ")
-                print()
+                print()     # struk pengambilan obat
                 print()
                 print("-----------------------------------")
                 print("     Rumah Sakit Pasti Sembuh")
@@ -447,16 +462,17 @@ while loop:
                 pay = "Pengambilan Obat"
 
                 
-            elif amantar == "2":
+            elif amantar == "2":    # apabila memilih untuk diantar
                 print("\nFitur Pengantaran Obat")
-                print("Pilih daerah pengantaran: ")
+                print("Pilih daerah pengantaran: ")     # pilihan daerah yang tersedia dalam fitur pengantaran
                 print(" 1. Jakarta")
                 print(" 2. Bogor")
                 print(" 3. Depok")
                 print(" 4. Tangerang")
                 print(" 5. Bekasi")
                 bantar = [10000, 35000, 20000, 250000, 22000]
-                daerah = input("Masukkan daerah tempat tinggal Anda (1/2/3/4): ")
+                # harga biaya antar tiap daerah
+                daerah = input("Masukkan daerah tempat tinggal Anda (1/2/3/4/5): ")
                 if daerah == "1":
                     biaya_antar = bantar[0]
                     print("Biaya antar: Rp10.000")
@@ -487,7 +503,7 @@ while loop:
                 pay = "Pengantaran Obat"
                 
               
-                def strukobat():
+                def strukobat():   # struk pengantaran obat
                     print()
                     print("----------------------------------------------")
                     print("           Rumah Sakit Pasti Sembuh")
@@ -512,7 +528,7 @@ while loop:
 
             bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar, Loop = pembayaran()
             strukbyr(bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar)
-
+            # memanggil menu pembayaran
             
             ulang = str(input("Apakah anda ingin keluar dari program (Y/T)"))
             if ulang.upper() == "Y":
@@ -524,7 +540,7 @@ while loop:
 
 
 
-        elif pilihan_fitur == "4":
+        elif pilihan_fitur == "4":      # Ketika memilih "Ketersediaan kamar pasien"
             os.system('cls')
             print("\nPilihan kelas kamar: ")
             print("\t1. Kelas 3")
@@ -575,6 +591,7 @@ while loop:
 
             bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar, Loop = pembayaran()
             strukbyr(bayarnya, byr, jumlah_bayar, kembalian, bayar_apa, nama_pasien, no_bpjs, ttl_pasien, nik, jbayar)
+            # memanggil menu pembayaran
 
             ulang = str(input("\nApakah anda ingin keluar dari program (Y/T)"))
             if ulang.upper() == "Y":
@@ -590,5 +607,4 @@ while loop:
 
 
 exit()
-
-            
+# program selesai
